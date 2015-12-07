@@ -8,17 +8,18 @@
 	1.1 - Headings
 	1.2 - Body Copy
 	1.3 - Buttons
-	1.4 - Forms
+	1.4 - Forms ----- x 
 	1.5 - Lists
-	1.6 - Tables
+	1.6 - Tables ----- x
 2.0 - Navigation Menus
 	2.1 - Main Menu
-	2.2 - Sub Menu
-	2.3 - Footer Menu
+	2.2 - Sub Menu ----- x
+	2.3 - Footer Menu ----- x
 3.0 - Content
 	3.1 - Site Structure
-	3.2 - Section Name
-	3.3 - Section Name
+	3.2 - Single Columns
+	3.3 - Partial Columns
+	3.4 - Sections
 4.0 - Media
 5.0 - Utility
 	5.1 - Background Colors
@@ -47,7 +48,7 @@ h1 {
     background-color: rgba(255,255,255,.5);
     line-height: 5rem;
     text-align: center;
-    padding: 20px;
+    padding: 1.42rem;
 }
 
 h2 {
@@ -86,10 +87,10 @@ address p {
 1.4 - FORMS
 -------------------------------------------------------------- */
 form {
-	padding-left:20px;
+	padding-left:1.42rem;
 }
 form div {
-	padding: 10px;
+	padding: .71rem;
 }
 form .col-1 {
 	padding-right: 2rem !important;
@@ -100,31 +101,21 @@ label {
 input, textarea {
 	background-color: #19896e;
 	width: 100%;
-	padding: 10px;
-	border:1px solid #19896e;
+	padding: .71rem;
+	border:.07rem solid #19896e;
 }
 input:focus, textarea:focus {
 	outline:none;
-	border:1px solid #115e4b;
+	border:.07rem solid #115e4b;
 }
-::-webkit-input-placeholder {
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
    color: white;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   color: white;  
-}
 
-::-moz-placeholder {  /* Firefox 19+ */
-   color: white;  
-}
-
-:-ms-input-placeholder {  
-   color: white;  
-}
 form a {
-	margin-top: 20px;
-	padding:10px 20px;
+	margin-top: 1.42rem;
+	padding:.71rem 1.42rem;
 	background-color: #146c57;
 	text-transform: uppercase;
 	color: white;
@@ -133,7 +124,7 @@ form a {
 	font-weight: 600;
 }
 
-form a:hover {
+form a:hover, address p a:hover {
 	color: #146c57;
 	background-color: white;
 	
@@ -146,7 +137,7 @@ dt, dd {
 }
 dt {
 	font-weight:100;
-	width: 20px;
+	width: 1.42rem;
 }
 dd {
 	font-weight: 600;
@@ -166,19 +157,24 @@ nav {
 nav li  {
 	display:inline-block;
 	list-style: none;
-	padding: 0 20px;
+	padding: 0 1.42rem;
     font-weight: 700;
 }
 
-nav a {
+address p a, nav a {
 	color: white;
 	text-decoration: none;
-	padding:10px;
+}
+
+nav a {
+	padding:.71rem;
 }
 
 nav a:hover {
 	background-color: rgba(255,255,255,.5);
 }
+
+
 
 /*--------------------------------------------------------------
 3.0 - CONTENT
@@ -213,7 +209,7 @@ figure {
     -webkit-margin-after: 0;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
-	margin-right: 20px;
+	margin-right: 1.42rem;
 }
 
 [class*="col-"] {
@@ -227,7 +223,7 @@ figure {
 }
 
 /*--------------------------------------------------------------
-3.1 - SINGLE COLUMNS
+3.2 - SINGLE COLUMNS
 -------------------------------------------------------------- */
 .col-1 {
 	width: 100%;
@@ -279,7 +275,7 @@ figure {
 	width: 8.33%;
 }
 /*--------------------------------------------------------------
-3.2 - PARTIAL COLUMNS
+3.3 - PARTIAL COLUMNS
 -------------------------------------------------------------- */
 
 .col-2-3 {
@@ -355,12 +351,12 @@ figure {
 	width: 91.67%;
 }
 /*--------------------------------------------------------------
-3.3 - SECTIONS
+3.4 - SECTIONS
 -------------------------------------------------------------- */
 /*-- Services -- */
 #services section div {
 	background-color: #1c7897;
-	padding:20px 10px;
+	padding:1.42rem .71rem;
 }
 
 /*--------------------------------------------------------------
@@ -373,11 +369,12 @@ figure {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  width: 100%;
 }
 
 #map {
-	height: 200px;
-	margin-top:100px;
+	height: 14.28rem;
+	margin-top: 7.14rem;
 }
 
 /*--------------------------------------------------------------
@@ -406,26 +403,35 @@ figure {
 5.3 - SPACING
 -------------------------------------------------------------- */
 .p-t-sm {
-	padding-top: 10px;
+	padding-top: .7rem;
 }
 .p-t-md {
-	padding-top: 20px;
+	padding-top: 1.43rem;
 }
 .p-t-lg {
-	padding-top: 50px;
+	padding-top: 3.5rem;
 }
 .p-b-lg {
-	padding-bottom: 50px;
+	padding-bottom: 3.5rem;
 }
 .p-b-xl {
-	padding-bottom: 100px;
+	padding-bottom: 7.15rem;
 }
 .m-t-0 {
 	margin-top: 0;
 }
 .m-b-lg {
-	margin-bottom: 50px;
+	margin-bottom: 3.5rem;
 }
+
+address p {
+	display: inline-block;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+	width: 100%;
+}
+
+
 /*--------------------------------------------------------------
 5.4 - ALIGNMENTS
 -------------------------------------------------------------- */
@@ -445,6 +451,39 @@ figure {
 
 
 @media screen and (max-width: 768px) {
-	
-	
+		.wrapper {
+			width:97%;
+		}
+		
+		.col-1-4 {
+			width: 45%;
+			margin: 1rem;
+		}
+		
+		.p-t-lg{
+			width: 100%;
+		}
+		
+		
+		.col-3-5 {
+			width: 84.44%;
+		}
+
+		[class*="col-"] {
+			float: left;
+			padding: 0 0 .5rem 0;
+		}
+
+		[class*="col-"]:last-of-type {
+			float: left;
+			padding-right: 0;
+		}
+
+		input {
+			width: 92%;
+			margin: 1.5rem 0;
+			
+		}
+		
+
 }
